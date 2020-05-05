@@ -1465,6 +1465,10 @@ export default {
     },
 
     toggleExpanded(node) {
+      if (!node.childrenStates) {
+        return
+      }
+
       let nextState
 
       if (this.localSearch.active) {
@@ -1528,6 +1532,8 @@ export default {
           const isLeaf = !isBranch
           const isDisabled = !!node.isDisabled || (!this.flat && !isRootNode && parentNode.isDisabled)
           const isNew = !!node.isNew
+          const isSelectable = (node.isSelectable == null || node.isSelectable === true)
+          const showCount = node.showCount != null && node.showCount === true
           const lowerCased = this.matchKeys.reduce((prev, key) => ({
             ...prev,
             [key]: stringifyOptionPropValue(node[key]).toLocaleLowerCase(),
@@ -1552,6 +1558,10 @@ export default {
           this.$set(normalized, 'isBranch', isBranch)
           this.$set(normalized, 'isLeaf', isLeaf)
           this.$set(normalized, 'isRootNode', isRootNode)
+          this.$set(normalized, 'isSelectable', isSelectable)
+          this.$set(normalized, 'icon', node.icon)
+          this.$set(normalized, 'isIcon', (node.icon != null))
+          this.$set(normalized, 'showCount', showCount)
           this.$set(normalized, 'raw', raw)
 
           if (isBranch) {

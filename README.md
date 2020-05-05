@@ -55,6 +55,9 @@ This example shows how to integrate vue-treeselect with your [Vue SFCs](https://
         options: [ {
           id: 'a',
           label: 'a',
+          isSelectable: false,
+          showCount: true,
+          icon: 'folder',
           children: [ {
             id: 'aa',
             label: 'aa',

@@ -1,7 +1,7 @@
 <template>
   <div>
     <treeselect
-      :multiple="true"
+      :multiple="false"
       :options="options"
       placeholder="Select your favourite(s)..."
       v-model="value"
@@ -13,40 +13,52 @@
 <script>
   export default {
     data: () => ({
-      value: [],
+      value: null,
       options: [ {
         id: 'fruits',
         label: 'Fruits',
+        isSelectable: false,
+        showCount: true,
+        icon: '<span color="#00f">folder</span>',
         children: [ {
           id: 'apple',
           label: 'Apple 🍎',
           isNew: true,
         }, {
+          isSelectable: false,
           id: 'grapes',
           label: 'Grapes 🍇',
         }, {
+          isSelectable: false,
           id: 'pear',
           label: 'Pear 🍐',
         }, {
+          isSelectable: false,
           id: 'strawberry',
           label: 'Strawberry 🍓',
         }, {
+          isSelectable: false,
           id: 'watermelon',
           label: 'Watermelon 🍉',
         } ],
       }, {
+        isSelectable: false,
         id: 'vegetables',
         label: 'Vegetables',
         children: [ {
+          isSelectable: false,
           id: 'corn',
           label: 'Corn 🌽',
         }, {
+          isSelectable: false,
           id: 'carrot',
           label: 'Carrot 🥕',
         }, {
+          isSelectable: false,
           id: 'eggplant',
           label: 'Eggplant 🍆',
         }, {
+          isSelectable: false,
           id: 'tomato',
           label: 'Tomato 🍅',
         } ],

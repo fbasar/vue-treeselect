@@ -64,7 +64,6 @@
         const { instance } = this
 
         if (!instance.menu.isOpen) return null
-
         return (
           <div ref="menu" class="vue-treeselect__menu" onMousedown={instance.handleMouseDown} style={this.menuStyle}>
             {this.renderBeforeList()}
@@ -149,7 +148,6 @@
 
       renderOptionList() {
         const { instance } = this
-
         return (
           <div class="vue-treeselect__list">
             {instance.forest.normalizedOptions.map(rootNode => (

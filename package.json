@@ -1,8 +1,8 @@
 {
-  "name": "@riophae/vue-treeselect",
-  "version": "0.4.0",
+  "name": "@fatihbasar/vue-treeselect",
+  "version": "0.4.3",
   "description": "A multi-select component with nested options support for Vue.js",
-  "author": "Riophae Lee <riophaelee@gmail.com>",
+  "author": "Fatih <fatih@fatihbasar.com>",
   "license": "MIT",
   "homepage": "https://vue-treeselect.js.org/",
   "repository": "riophae/vue-treeselect",

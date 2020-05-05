@@ -122,7 +122,7 @@
 
         if (instance.single) return null
         if (instance.disableBranchNodes && node.isBranch) return null
-
+        if (!node.isSelectable) return null
         return (
           <div class="vue-treeselect__checkbox-container">
             {children}
@@ -158,12 +158,15 @@
 
       renderLabel() {
         const { instance, node } = this
-        const shouldShowCount = (
-          node.isBranch && (instance.localSearch.active
-            ? instance.showCountOnSearchComputed
-            : instance.showCount
+        let shouldShowCount = node.showCount
+        if (!shouldShowCount) {
+          shouldShowCount = (
+            node.isBranch && (instance.localSearch.active
+              ? instance.showCountOnSearchComputed
+              : instance.showCount
+            )
           )
-        )
+        }
         const count = shouldShowCount
           ? instance.localSearch.active
             ? instance.localSearch.countMap[node.id][instance.showCountOf]
@@ -183,8 +186,9 @@
 
         return (
           <label class={labelClassName}>
+            {node.isIcon && <span><i class={node.icon} /></span>}
             {node.label}
-            {shouldShowCount && (
+            {(shouldShowCount || node.showCount) && (
               <span class={countClassName}>({count})</span>
             )}
           </label>
@@ -254,6 +258,10 @@
 
       handleMouseDownOnLabelContainer: onLeftClick(function handleMouseDownOnLabelContainer() {
         const { instance, node } = this
+        if (node.isSelectable === false) {
+          instance.toggleExpanded(node)
+          return
+        }
 
         if (node.isBranch && instance.disableBranchNodes) {
           instance.toggleExpanded(node)
