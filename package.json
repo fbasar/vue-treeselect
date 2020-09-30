@@ -1,6 +1,6 @@
 {
   "name": "@fatihbasar/vue-treeselect",
-  "version": "0.4.4",
+  "version": "0.4.5",
   "description": "A multi-select component with nested options support for Vue.js",
   "author": "Fatih <fatih@fatihbasar.com>",
   "license": "MIT",
@@ -33,6 +33,9 @@
   "pre-commit": "lint",
   "dependencies": {
     "@babel/runtime": "^7.3.1",
+    "@fortawesome/fontawesome-svg-core": "^1.2.28",
+    "@fortawesome/free-solid-svg-icons": "^5.13.0",
+    "@fortawesome/vue-fontawesome": "^0.1.9",
     "babel-helper-vue-jsx-merge-props": "^2.0.3",
     "easings-css": "^1.0.0",
     "fuzzysearch": "^1.0.3",

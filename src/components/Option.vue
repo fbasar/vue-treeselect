@@ -1,4 +1,6 @@
 <script>
+
+  import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
   import { UNCHECKED, INDETERMINATE, CHECKED } from '../constants'
   import { onLeftClick } from '../utils'
   import Tip from './Tip'
@@ -50,12 +52,19 @@
               this.renderCheckboxContainer([
                 this.renderCheckbox(),
               ]),
+              this.renderIcon(),
               this.renderLabel(),
             ])}
           </div>
         )
       },
-
+      renderIcon() {
+        const { node } = this
+        if (node.isIcon)
+          return <div class="vue-treeselect__option-arrow-container" ><FontAwesomeIcon icon={node.icon} style={node.iconStyle}/></div>
+        else
+          return null
+      },
       renderSubOptionsList() {
         if (!this.shouldExpand) return null
 
@@ -185,8 +194,7 @@
         })
 
         return (
-          <label class={labelClassName}>
-            {node.isIcon && <span><i class={node.icon} /></span>}
+          <label class={labelClassName} >
             {node.label}
             {(shouldShowCount || node.showCount) && (
               <span class={countClassName}>({count})</span>

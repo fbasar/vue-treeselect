@@ -1561,6 +1561,7 @@ export default {
           this.$set(normalized, 'isSelectable', isSelectable)
           this.$set(normalized, 'icon', node.icon)
           this.$set(normalized, 'isIcon', (node.icon != null))
+          this.$set(normalized, 'iconStyle', node.iconStyle ? node.iconStyle : {})
           this.$set(normalized, 'showCount', showCount)
           this.$set(normalized, 'raw', raw)
 

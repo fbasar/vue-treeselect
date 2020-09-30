@@ -494,6 +494,7 @@
 
   &.vue-treeselect__multi-value-item-new {
     background: @treeselect-multi-value-item-bg-new;
+
     &:hover {
       background: @treeselect-multi-value-item-bg-new;
     }
@@ -768,6 +769,7 @@
     }
   }
 }
+
 .generate-level-indentations(@treeselect-max-level);
 
 .vue-treeselect__option {
@@ -966,10 +968,11 @@
 .vue-treeselect__label {
   .text-truncate();
 
-  display: table-cell;
+  display: flex;
+  flex-direction: row;
   padding-left: @treeselect-padding;
   max-width: 100%;
-  vertical-align: middle;
+  //vertical-align: middle;
   cursor: inherit; // override user agent style
 
   [dir="rtl"] & {

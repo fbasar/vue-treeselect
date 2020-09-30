@@ -19,7 +19,8 @@
         label: 'Fruits',
         isSelectable: false,
         showCount: true,
-        icon: '<span color="#00f">folder</span>',
+        icon: 'folder',
+        iconStyle: { color: '#b81b3c' },
         children: [ {
           id: 'apple',
           label: 'Apple 🍎',

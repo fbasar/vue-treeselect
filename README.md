@@ -30,6 +30,10 @@ npm install --save @riophae/vue-treeselect
 
 This example shows how to integrate vue-treeselect with your [Vue SFCs](https://vuejs.org/v2/guide/single-file-components.html).
 
+
+All icon see in [solid icons](https://fontawesome.com/icons?d=gallery&s=solid)
+if you want icon color change use iconStyle tag example: iconStlye:{color:"#fff"} 
+
 ```vue
 <!-- Vue SFC -->
 <template>
@@ -58,6 +62,7 @@ This example shows how to integrate vue-treeselect with your [Vue SFCs](https://
           isSelectable: false,
           showCount: true,
           icon: 'folder',
+          iconStyle:{color:"#000"},
           children: [ {
             id: 'aa',
             label: 'aa',

@@ -1,6 +1,11 @@
+import { library } from '@fortawesome/fontawesome-svg-core'
+//import Icons from '@fortawesome/free-solid-svg-icons'
+import { fas } from '@fortawesome/free-solid-svg-icons'
 import Treeselect from './components/Treeselect'
 import treeselectMixin from './mixins/treeselectMixin'
 import './style.less'
+
+library.add(fas)
 
 export default Treeselect
 export { Treeselect, treeselectMixin }
